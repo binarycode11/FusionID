@@ -12,3 +12,6 @@
 3. Realizar busca em um batch todo.
 4. Testar em GPU na parte inicial.
 5. Organizar os testes.
+
+
+43 batchs
