@@ -3,6 +3,9 @@ Referência a "Papyrus", um dos primeiros materiais de escrita, combinado com "T
 
 Essa estrutura de pipeline foi usado para o Exame de Qualificação.
 ```
+python3 -m venv ./venv
+source ./venv/bin/activate (linux)
+.\venv\Scripts\activate (windows)
 pip install -r requirements.txt
 ```
 

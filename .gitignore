@@ -160,7 +160,7 @@ cython_debug/
 #.idea/
 
 #image
-*.jpg
-*.jpeg
+# *.jpg
+# *.jpeg
 #Dataset
 /data
