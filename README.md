@@ -55,3 +55,6 @@ Um estudo de ablação envolve modificar ou remover componentes de um sistema pa
 Cada experimento deve ser documentado com as métricas de desempenho relevantes (ex: precisão, recall, F1 score). O objetivo é entender a contribuição de cada componente e identificar áreas para otimização.
 
 As implementações específicas de detecção, matching local, e outras etapas onde mencionado, foram baseadas nas funcionalidades disponíveis no [Kornia](https://kornia.github.io/), uma biblioteca de visão computacional para PyTorch.
+
+
+Fiz um teste com o batch de 30, a melhor solucao ficou em 50 fetures threadshold de 0.005 e distance de 1.75
