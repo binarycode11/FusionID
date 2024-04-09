@@ -1,0 +1,5 @@
+Num Features,Feature Local Class,Distance,Threshold,Matches,Scores
+|      30      |     SIFTFeature     |   0.9    |   0.005   | (1005, 1020) | (1015, 1020) |
+|      20      |     SIFTFeature     |   0.9    |   0.005   | (992, 1020)  | (1011, 1020) |
+|      10      |     SIFTFeature     |   0.9    |   0.005   | (934, 1020)  | (1000, 1020) |
+|      5       |     SIFTFeature     |   0.9    |   0.005   | (791, 1020)  | (1003, 1020) |
