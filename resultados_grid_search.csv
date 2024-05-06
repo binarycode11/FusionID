@@ -1,13 +1,31 @@
 Num Features,Feature Local Class,Distance,Threshold,Matches,Scores
-60,GFTTAffNetHardNet,0.95,0.5,"(157, 354)","(245, 354)"
-60,GFTTFeatureSosNet,0.95,0.5,"(168, 354)","(273, 354)"
-60,KeyNetHardNet,0.95,0.5,"(13, 354)","(124, 354)"
-60,HesAffNetHardNet,0.95,0.5,"(144, 354)","(182, 354)"
-60,SIFTFeature,0.95,0.5,"(123, 354)","(250, 354)"
-60,SIFTFeatureScaleSpace,0.95,0.5,"(13, 354)","(108, 354)"
-70,GFTTAffNetHardNet,0.95,0.5,"(181, 354)","(275, 354)"
-70,GFTTFeatureSosNet,0.95,0.5,"(205, 354)","(289, 354)"
-70,KeyNetHardNet,0.95,0.5,"(16, 354)","(169, 354)"
-70,HesAffNetHardNet,0.95,0.5,"(157, 354)","(208, 354)"
-70,SIFTFeature,0.95,0.5,"(170, 354)","(252, 354)"
-70,SIFTFeatureScaleSpace,0.95,0.5,"(17, 354)","(149, 354)"
+30,GFTTAffNetHardNet,0.9,0.5,"[TP:23,FP:3,FN:154]
+[P:0.88,R:0.13,F1:0.23]
+","[TP:39,FP:0,FN:138]
+[P:1.00,R:0.22,F1:0.36]
+"
+30,GFTTFeatureSosNet,0.9,0.5,"[TP:29,FP:0,FN:148]
+[P:1.00,R:0.16,F1:0.28]
+","[TP:46,FP:1,FN:131]
+[P:0.98,R:0.26,F1:0.41]
+"
+30,KeyNetHardNet,0.9,0.5,"[TP:0,FP:3,FN:177]
+[P:0.00,R:0.00,F1:0.00]
+","[TP:5,FP:0,FN:172]
+[P:1.00,R:0.03,F1:0.05]
+"
+30,HesAffNetHardNet,0.9,0.5,"[TP:29,FP:4,FN:148]
+[P:0.88,R:0.16,F1:0.28]
+","[TP:43,FP:1,FN:134]
+[P:0.98,R:0.24,F1:0.39]
+"
+30,SIFTFeature,0.9,0.5,"[TP:15,FP:57,FN:162]
+[P:0.21,R:0.08,F1:0.12]
+","[TP:44,FP:0,FN:133]
+[P:1.00,R:0.25,F1:0.40]
+"
+30,SIFTFeatureScaleSpace,0.9,0.5,"[TP:4,FP:131,FN:173]
+[P:0.03,R:0.02,F1:0.03]
+","[TP:9,FP:0,FN:168]
+[P:1.00,R:0.05,F1:0.10]
+"
