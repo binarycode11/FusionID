@@ -12,7 +12,16 @@ class FloydWarshall(IGlobalMatcher):
 
     @staticmethod
     def match_matrix(mat_a, mat_b, threshold):
+        # Garantir que mat_a e mat_b não contenham valores inválidos
+        mat_a = np.nan_to_num(mat_a)
+        mat_b = np.nan_to_num(mat_b)
         mat_dist = mat_b - mat_a
+
+        # Substituir valores inválidos por zero e limitar valores para evitar overflow
+        mat_dist = np.nan_to_num(mat_dist)
+        # Limitar os valores de mat_dist para evitar overflow
+        mat_dist = np.clip(mat_dist, -1e150, 1e150)
+
         for i in range(mat_dist.shape[0]):
             mat_dist[i, :i] = 0
         mat_dist = mat_dist * mat_dist

@@ -42,3 +42,36 @@ class GenericDataset(Dataset):
         if self.transform:
             img = self.transform(img)
         return img, os.path.basename(filename)
+
+
+class WoodsDataset(torch.utils.data.Dataset):
+    """Fibers dataset. to train neural net"""
+
+    def __init__(self, transform=None,train=True, root='./data/woods/',limit_train=0.5):
+        np.random.seed(0)
+        self.transform = transform
+        self.data = np.array(sorted(glob.glob('{}*.jpg'.format(root))))
+
+        limit_train = int(len(self.data)*limit_train)
+        indices = np.random.permutation(len(self.data))
+        # print("path ",path," len ",len(self.data)," limit_train ",limit_train)
+        training_idx, test_idx = indices[:limit_train], indices[limit_train:]
+
+        self.image_list = []
+        if train:
+            self.data = self.data[training_idx]
+        else:
+            self.data = self.data[test_idx]
+        # print('train '+str(train),' ',len(self.data))
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        if torch.is_tensor(idx):
+            idx = idx.tolist()
+
+        filename = self.data[idx]
+        img = Image.open(filename)
+        img_t = self.transform(img)
+        return img_t,'wood'
