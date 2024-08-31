@@ -19,7 +19,8 @@ class GenericDataset(Dataset):
         """
         np.random.seed(0)
         self.transform = transform
-        self.data = np.array(sorted(glob.glob(os.path.join(root, extension))))
+        self.data = np.array(sorted(glob.glob(os.path.join(root, '**', extension), recursive=True)))
+
 
         limit_train = int(len(self.data) * limit_train)
         indices = np.random.permutation(len(self.data))
