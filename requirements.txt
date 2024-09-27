@@ -7,3 +7,4 @@ scipy
 matplotlib
 numpy  # Adicionado, pois é uma dependência comum e importante para muitas dessas bibliotecas
 prettytable
+ipykernel
