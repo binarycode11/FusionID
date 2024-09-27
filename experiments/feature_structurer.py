@@ -8,7 +8,7 @@ from interfaces.pipeline import IGlobalFeatureStructurer
 class DelaunayGraph(IGlobalFeatureStructurer):
     @staticmethod
     def distancePoint(p1, p2):
-        return math.hypot(p1[0] - p2[0], p1[1] - p2[1])
+        return np.linalg.norm(p1 - p2)#math.hypot(p1[0] - p2[0], p1[1] - p2[1])
 
     def buildConnection(self, tri):
         mapConnection = []
