@@ -22,10 +22,12 @@ cd FusionID
 It's recommended to use a virtual environment to manage dependencies. Run the following command to create one:
 
 ```bash
-python3 -m venv ./venv
+sudo python3 -m venv ./venv
 source ./venv/bin/activate (linux)
 
 .\venv\Scripts\activate (windows)
+
+pip3 install -r requirements.txt
 ```
 
 ## 4. Deactivate the Virtual Environment (Optional)
