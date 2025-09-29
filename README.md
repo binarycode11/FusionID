@@ -1,60 +1,35 @@
-# PapyrusTech
-Referência a "Papyrus", um dos primeiros materiais de escrita, combinado com "Tech", indicando a tecnologia envolvida no reconhecimento de documentos antigos ou novos
+# Summary
+Effectively distinguishing between images in high visual similarity datasets poses significant challenges, especially with photometric variations, perspective transformations, and/or occlusions. We introduce a novel methodology that fuses local and global feature detection techniques. By integrating local feature analysis with global feature representation based on graph structuring and processing, our approach can capture topological and metric relationships among descriptors. The proposed graph representation is computed using only matching features, hence filtering irrelevant information and focusing on unique image attributes that favor identification. This study aims to answer how the synergistic combination of these techniques can outperform conventional identification methods dealing with data sets with high visual similarity. We performed experiments showing significant improvements in precision and recall, reflected in the F1-Score, of the proposed strategy over pure local-based image identification. The results highlight the potential of hybrid approaches for better image recognition, also revealing that local-based method can use our proposal as an additional component for obtaining improved results.
 
-Essa estrutura de pipeline foi usado para o Exame de Qualificação.
+# Step-by-Step Guide to Run the FusionID Project
+This guide provides the necessary steps to set up and run the FusionID project on your local machine, aimed at enhancing image identification through a hybrid approach that integrates local and global feature detection.
+
+## 1. Clone the Repository
+
+First, clone the repository to your local machine using Git:
+
+```bash
+git clone https://github.com/binarycode11/FusionID.git)
 ```
+
+## 2. Navigate to the Project Directory
+After cloning the repository, navigate to the project directory:
+```bash
+cd FusionID
+```
+
+## 3. Create a Virtual Environment
+It's recommended to use a virtual environment to manage dependencies. Run the following command to create one:
+
+```bash
 python3 -m venv ./venv
 source ./venv/bin/activate (linux)
+
 .\venv\Scripts\activate (windows)
-pip install -r requirements.txt
 ```
 
-## Métodos do Pipeline
-
-A seguir, são listados os métodos/algoritmos propostos para cada etapa do pipeline de processamento de imagens. Foi utilizado a implementação do [Kornia](https://kornia.github.io/) para várias das etapas, especialmente detecção e matching de características.
-
-| Etapa do Pipeline       | Métodos/Algoritmos Propostos                 |
-|-------------------------|----------------------------------------------|
-| **Preprocessamento**    | - Some Noise                                 |
-|                         | - Some Filter                                |
-| **Detecção**            | - KeyNetDetector + HardNet (KeyNetHardNet)   |
-|                         | - SIFTFeature                                |
-|                         | - DISKFeatures                               |
-|                         | - KoreanDetector + HardNet                   |
-| **Matching Local**      | - match_snn                                  |
-|                         | - match_smnn                                 |
-| **Estruturação Global** | - Delaunay                                   |
-| **Matching Global**     | - Floyd Warshall                             |
-
-## Proposta de Estudo de Ablação
-
-Um estudo de ablação envolve modificar ou remover componentes de um sistema para avaliar o impacto de cada um no desempenho geral. A seguir, uma proposta para realizar este estudo no contexto do pipeline de processamento de imagens descrito:
-
-1. **Baseline Completo**: Utilizar todas as etapas do pipeline com um conjunto específico de métodos para estabelecer uma linha de base de desempenho.
-
-2. **Ablação de Preprocessamento**:
-   - Remover `Some Noise` e comparar o desempenho.
-   - Remover `Some Filter` e comparar o desempenho.
-   - Avaliar o impacto da remoção de ambas as etapas de preprocessamento.
-
-3. **Ablação de Detecção**:
-   - Substituir o detector (ex: usar `SIFTFeature` ao invés de `KeyNetDetector + HardNet`) mantendo o restante do pipeline constante e comparar o desempenho.
-
-4. **Ablação de Matching Local**:
-   - Alternar entre `match_snn` e `match_smnn`, avaliando o impacto no desempenho.
-
-5. **Ablação de Estruturação Global**:
-   - Omitir a etapa de `Delaunay` e avaliar o impacto no desempenho do matching global.
-
-6. **Ablação de Matching Global**:
-   - Remover a etapa de `Floyd Warshall` para entender seu impacto no desempenho.
-
-7. **Combinações Variadas**:
-   - Experimentar com diferentes combinações de métodos em cada etapa para encontrar a configuração que otimiza o desempenho.
-
-Cada experimento deve ser documentado com as métricas de desempenho relevantes (ex: precisão, recall, F1 score). O objetivo é entender a contribuição de cada componente e identificar áreas para otimização.
-
-As implementações específicas de detecção, matching local, e outras etapas onde mencionado, foram baseadas nas funcionalidades disponíveis no [Kornia](https://kornia.github.io/), uma biblioteca de visão computacional para PyTorch.
-
-
-Fiz um teste com o batch de 30, a melhor solucao ficou em 50 fetures threadshold de 0.005 e distance de 1.75
+## 4. Deactivate the Virtual Environment (Optional)
+Once you are done, you can deactivate the virtual environment by running:
+```bash
+deactivate
+```
