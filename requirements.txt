@@ -1,10 +1,8 @@
-torch
-torchvision
-torchaudio
 kornia
 kornia-moons
 scipy
 matplotlib
 numpy  # Adicionado, pois é uma dependência comum e importante para muitas dessas bibliotecas
 prettytable
+visidex==0.2.7
 ipykernel

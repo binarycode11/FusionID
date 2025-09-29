@@ -3,7 +3,7 @@ import torch
 from kornia.feature import LocalFeature, DescriptorMatcher
 from kornia.utils import tensor_to_image
 from typing import Dict, Tuple, List
-from utils import MyDrawMatcher, evaluate_matches, print_table  # Supondo que essas funções estão em 'utils.py'
+from utils import MyDrawMatcher  # Supondo que essas funções estão em 'utils.py'
 from experiments import DelaunayGraph
 class ImageComparisonPipeline:
     def __init__(self, preprocessor=None, local_feature: LocalFeature = None, descriptor_matcher: DescriptorMatcher = None):
@@ -68,10 +68,5 @@ class ImageComparisonPipeline:
                     num_match = 0
 
                 count_match[i_index, r_index] = num_match
-
-
-        if log is not None and log in ('INFO'):
-            print_table(count_match)
-            print("count_match : ", evaluate_matches(count_match, 8))
 
         return count_match
